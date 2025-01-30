@@ -51,10 +51,14 @@ df.to_csv("topsis_text_summarization_results.csv", index=False)
 
 # Step 8: Visualize Results
 import matplotlib.pyplot as plt
-
 plt.barh(df["Model"], df["TOPSIS Score"], color="skyblue")
 plt.xlabel("TOPSIS Score")
 plt.ylabel("Model")
 plt.title("Model Rankings using TOPSIS")
 plt.gca().invert_yaxis()
+
+# Save the chart as a PNG file
+plt.savefig("model_rankings.png", dpi=300, bbox_inches="tight")
+
+# Display the chart
 plt.show()
